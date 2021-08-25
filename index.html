@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufactura</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h1>We manufacture a hard copy of
+            your dreams and stories.</h1>
+<ul>
+    <li class="list active" data-filter="All">All</li>
+    <li class="list" data-filter="webdesign">Web Design</li>
+    <li class="list" data-filter="Applications">Applications</li>
+    <li class="list" data-filter="Development">Development</li>
+</ul>
+<div class="product">
+    <div class="itemBox webdesign All"><img src="img/web design1.jpg" alt=""></div>
+    <div class="itemBox Applications All"><img src="img/application.jpg" alt=""></div>
+    <div class="itemBox Development All"><img src="img/development1.jpg" alt=""></div>
+    <div class="itemBox webdesign All"><img src="img/web design2.jpg" alt=""></div>
+    <div class="itemBox Development All"><img src="img/development2.jpg" alt=""></div>
+    <div class="itemBox All"><img src="img/work-4.jpg" alt=""></div>
+
+</div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.list').click(function(){
+                const value = $(this).attr('data-filter');
+                if(value == "all"){
+                    $('.itemBox').show('1000');
+                }
+                else{
+                    $('.itemBox').not('.'+value).hide('1000'); 
+                    $('.itemBox').filter('.'+value).show('2000');
+
+                }
+
+            });
+            $('.list').click(function(){
+             $(this).addClass('active').siblings().removeClass('active');
+            });
+        });
+    </script>
+  
+
+    
+</body>
+</html>
